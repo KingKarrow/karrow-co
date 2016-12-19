@@ -1,0 +1,72 @@
+<!DOCTYPE html>       
+<html id="ng-app" ng-app="karrow" ng-controller="KarrowCTRL">       
+	<head>
+    	
+        <meta charset="utf-8" />
+        <meta name="description" content="The strange, the cute, the spectacular!" />
+        <meta name="keywords" content="Mike McKean, Mike McKean Art, Michael McKean, Michael McKean Art, Karrow, Karrow Art, Karrow.co, Karrowart, Portfolio, Illustration, Animation, Design, Web Design, Drawing, Character, Cartoon" />
+        <meta name="author" content="Mike McKean" />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1"/>-->
+        
+         <title>Art of Mike McKean</title>
+    
+        <link rel="stylesheet" type="text/css" href="resources/css/lib/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="resources/css/lib/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+        <link rel="icon" type="image/png" href="resources/img/favicon.png" />
+        <!--<base href="/">-->
+        
+	</head>
+	<body class="tk-futura-pt" ng-class="{ 'invert' : invertedColors }">
+        <div main-content></div>
+		<div class="half half-bottom" ng-class="{ 'outro' : $rootScope.outro }">
+            <span style="position:absolute;bottom:0;right:.25em;font-size:2em;">Art of Mike McKean</span>
+			<div class="header-bar container-fluid footer" ng-class="{ 'open' : $rootScope.outro }">
+				<div class="row">
+                    <div class="col-xs-6">
+                        <span class="text-primary-dark">Karrow.co &copy; Mike McKean 2015</span>
+                    </div>
+                    <div class="col-xs-6">
+                        <span class="text-primary-dark pull-right">mgmckean@gmail.com</span>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="half half-top" ng-class="{ 'outro' : $rootScope.outro }">
+			<div class="header-bar" ng-class="{ 'open' : $rootScope.outro }">
+				<div nav-bar></div>
+                <div class="snap-dogs sq-container"></div>
+			</div>
+		</div>
+	</body>
+
+    <script src="//use.typekit.net/fgv5flp.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    
+    <script src="resources/js/lib/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="resources/js/lib/angular.js" type="text/javascript"></script>
+    <script src="resources/js/lib/angular-ui-router.js" type="text/javascript"></script>
+    <script src="resources/js/lib/bootstrap.min.js" type="text/javascript"></script>
+    <script src="resources/js/lib/ui-bootstrap-tpls-0.12.0.js" type="text/javascript"></script>
+    <script src="resources/js/lib/snap.svg-min.js" type="text/javascript"></script>
+    <script src="resources/js/lib/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+    
+    <!--angular-->
+    <script src="resources/js/app.js" type="text/javascript"></script>
+    <script src="resources/js/directives.js" type="text/javascript"></script>
+    <script src="resources/js/controllers.js" type="text/javascript"></script>
+    
+    <!--controllers-->
+    <script src="resources/js/controllers/karrow.js" type="text/javascript"></script>
+    <script src="resources/js/controllers/gallery.js" type="text/javascript"></script>
+    <script src="resources/js/controllers/about.js" type="text/javascript"></script>
+    <script src="resources/js/controllers/gallery/animation.js" type="text/javascript"></script>
+    <script src="resources/js/controllers/gallery/illustration.js" type="text/javascript"></script>
+    
+    <!--directives-->
+    <script src="resources/js/directives/snapDogs.js" type="text/javascript"></script>
+    <script src="resources/js/directives/mainContent.js" type="text/javascript"></script>
+    <script src="resources/js/directives/navBar.js" type="text/javascript"></script>
+    <script src="resources/js/directives/gallery/galleryBase.js" type="text/javascript"></script>
+    <script src="resources/js/directives/hoverable.js" type="text/javascript"></script>
+</html>

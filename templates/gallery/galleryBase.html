@@ -1,0 +1,75 @@
+<div class="gallery" ng-class="{ 'animation' : galleryType == 'animation' }">
+    <div ng-if="galleryType != 'animation'" class="image-dock">
+        <div class="col-xs-12 text-center">
+            <a href hoverable ng-repeat="image in imageList" ng-class="{ 'active': image.focused }" ng-click="imageFocus($index)">
+                <img ng-src="resources/img/gallery/{{ galleryType }}/thumbs/JPEG/{{ image.file }}" height="100%">
+            </a>
+        </div>
+    </div>
+    <div ng-if="galleryType != 'animation'" class="image-large">
+        <div class="col-xs-1">
+            <a href hoverable class="side-image left"
+               ng-if="!!imageList[focusedImage.index-1]"
+               ng-click="imageFocus(focusedImage.index-1)">
+                <img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ imageList[focusedImage.index-1].file }}">
+            </a>
+        </div>
+        <div class="col-xs-10">
+            <a hoverable ng-click="present(1)" href class="center-image" ng-class="{ 'image-loading' : loading['f'] }">
+                <img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ focusedImage.file }}">
+                <div class="hover-info">
+                    <h2>{{ focusedImage.name }}</h2>
+                    <i class="fa fa-expand"></i>
+                </div>
+            </a>
+        </div>
+        <div class="col-xs-1">
+            <a hoverable href class="side-image right"
+               ng-if="!!imageList[focusedImage.index+1]"
+               ng-click="imageFocus(focusedImage.index+1)">
+                <img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ imageList[focusedImage.index+1].file }}">
+            </a>
+        </div>
+    </div>
+    <div ng-if="galleryType == 'animation'" class="videos">
+        <div class="col-md-4 col-xs-12 col-sm-6" ng-repeat="video in videoList">
+            <div class="video-placeholder">
+                <div>
+                    <img src="resources/img/youtube45.png">
+                </div>
+            </div>
+            <iframe width="100%" height="100%" ng-src="{{ video.embed }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<div class="presentation" ng-if="galleryType != 'animation'" ng-click="present(0)" ng-class="{ 'presenting' : presenting }">
+    <a href hoverable
+       ng-if="!!imageList[presentedImage.index-1]"
+       ng-click="imagePresent((presentedImage.index-1), $event)"
+       class="arrows left">
+        <!--<img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ imageList[presentedImage.index-1].file }}" height="100%">-->
+        <div>
+            <i class="fa fa-caret-left"></i>
+        </div>
+    </a>
+    <a href hoverable
+       ng-if="!!imageList[presentedImage.index+1]"
+       ng-click="imagePresent((presentedImage.index+1), $event)"
+       class="arrows right">
+        <!--<img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ imageList[presentedImage.index+1].file }}" height="100%">-->
+        <div>
+            <i class="fa fa-caret-right"></i>
+        </div>
+    </a>
+    <div class="full-view">
+        <div class="present-img col-xs-9">
+            <a ng-class="{ 'image-loading' : loading['f'] }" href ng-click="presentCycle($event)">
+                <img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ presentedImage.file }}">
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <h1>{{ presentedImage.name }}</h1>
+            <p class="tk-rosario">{{ presentedImage.description }}</p>
+        </div>
+    </div>
+</div>

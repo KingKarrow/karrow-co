@@ -1,0 +1,1 @@
+var karrow_controllers = angular.module('karrow.controllers', []);

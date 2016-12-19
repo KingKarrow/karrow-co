@@ -1,0 +1,1 @@
+var karrow_directives = angular.module('karrow.directives', []);

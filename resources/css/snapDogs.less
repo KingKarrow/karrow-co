@@ -1,0 +1,186 @@
+// main: style.less
+html, body { height: 100%; }
+
+body { background-color: #fff; }
+
+.half {
+	position: fixed;
+	width: 100%;
+	height: 50%;
+	left: 0;
+	background-color: @brand-primary;
+	&.trans-active { transition: height 1s; }
+	&.outro { height: @header-height; }
+}
+
+.half-top {
+	top: 0;
+	.header-bar { bottom: 0; }
+}
+
+.half-bottom {
+	bottom: 0;
+	.header-bar { top: 0; }
+}
+
+.header-bar {
+	position: absolute;
+	left: 0;
+	height: @header-height;
+	width: 100%;
+	background-color: #fff;
+}
+
+.trans-active .header-bar { transition: background-color 1s; }
+
+.half-top .header-bar.open {
+	background-color: @brand-primary-dark;
+}
+
+.half-bottom .header-bar.open {
+	background-color: @brand-black;
+}
+
+/** fixed aspect ratio depending on width from http://stackoverflow.com/a/6615994 **/
+
+.sq-container {
+    display: inline-block;
+    position: absolute;
+    width: 30em;
+    max-width: 90%;
+    top: 100%;
+    left: 50%;
+    &:before {
+	    content: "";
+	    display: block;
+	    margin-top: 100%;
+    }
+}
+
+.trans-active .sq-container { transition: width 1s, left 1.3s ease 200ms; }
+
+.outro .sq-container {
+	width: 7em;
+	left: 4em;
+}
+
+.sq {
+    position: absolute;
+    top: -50%;
+    bottom: 50%;
+    left: -50%;
+    right: 50%;
+    border-radius: 50%;
+}
+
+.svgDogs { 
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	background-color: @brand-primary;
+	border: 40px solid @brand-black;
+	border-radius: 50%;
+	position: relative;
+}
+
+.sq.hover {
+    cursor: pointer;
+    > .svgDogs {
+        cursor: pointer;
+        border-color: #fff;
+        .dog1 {
+            display: none;
+            //transform: scale(1.5);
+        }
+        .dog2 {
+            display: block;
+            //transform: scale(1);
+        }
+    }
+}
+
+.trans-active .svgDogs { 
+    transition: border-width 1s, border-color .5s;
+    -webkit-transition: border-width 1s, border-color .2s;
+}
+
+.outro .svgDogs {
+	border-width: 4px;
+}
+
+.svg { 
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	left: 10%;
+	top: 17%;
+	margin-left: -2%;
+	text-shadow: 4px 4px 2px #000;
+	overflow: visible !important;
+    .transition(.2s transform);
+	g { width: 100%; height: 100%; }
+}
+
+.dog1 { 
+    display: block;
+    //transform: scale(1);
+}
+.dog2 { 
+    display: none;
+    //transform: scale(1.5);
+}
+
+// CIRCLE TEXT //
+
+.circle-text-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    .transform(rotate(0deg));
+    opacity: 0;
+    -webkit-transition: transform 1s 1s, opacity 1s 1s;
+    transition: transform 1s 1s, opacity 1s 1s;
+    .circle-text {
+        height: 100%;
+        display: table;
+        position: absolute;
+        left: 50%;
+        -ms-tranform-origin: 0 50%;
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+        //.transform(rotate(0deg));
+        span {
+            vertical-align: bottom;
+            line-height: 1;  
+            font-size: 40px;
+            display: table-cell;
+            color: #fff;
+            position: relative;
+            left: -50%;
+            .transition(font-size 1s);
+        }
+        &:nth-child(2) { .transform(rotate(-8deg)) }
+        &:nth-child(3) { .transform(rotate(-16deg)) }
+        &:nth-child(4) { .transform(rotate(-22deg)) }
+        &:nth-child(5) { .transform(rotate(-29deg)) }
+        &:nth-child(6) { .transform(rotate(-40deg)) }
+        &:nth-child(7) { .transform(rotate(-47deg)) }
+        &:nth-child(8) { .transform(rotate(-54deg)) }
+        &:nth-child(9) { .transform(rotate(-60deg)) }
+    }
+}
+
+.trans-active .circle-text-container {
+    .transform(rotate(30deg));
+    opacity: 1;
+}
+
+.outro .circle-text-container {
+    visibility: hidden;
+    .circle-text span {
+        font-size: 4px;
+    }
+}

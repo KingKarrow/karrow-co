@@ -1,0 +1,38 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav full-nav">
+            <li class="dropdown active" dropdown>
+                <a hoverable href class="dropdown-toggle" dropdown-toggle>
+                    Gallery <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a hoverable ui-sref="gallery.illustration" ng-class="{ 'active' : (selectedNav == 'gallery.illustration') }">Illustration</a>
+                    </li>
+                    <li>
+                        <a hoverable ui-sref="gallery.animation" ng-class="{ 'active' : (selectedNav == 'gallery.animation') }">Animation</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a hoverable ui-sref="about" ng-class="{ 'active' : (selectedNav == 'about') }">About</a></li>
+            <li><a hoverable href="http://karrowart.storeenvy.com" target="_blank">Store</a></li>
+        </ul>
+        <div class="xs-nav" dropdown>
+            <a hoverable href class="dropdown-toggle" dropdown-toggle>
+                <i class="fa fa-bars fa-lg"></i>
+            </a>
+            <ul class="nav navbar-nav dropdown-menu">
+                <li class="dropdown-header">Gallery</li>
+                <li>
+                    <a hoverable ui-sref="gallery.illustration" ng-class="{ 'active' : (selectedNav == 'gallery.illustration') }">Illustration</a>
+                </li>
+                <li>
+                    <a hoverable ui-sref="gallery.animation" ng-class="{ 'active' : (selectedNav == 'gallery.animation') }">Animation</a>
+                </li>
+                <li class="divider"></li>
+                <li><a hoverable ui-sref="about" ng-class="{ 'active' : (selectedNav == 'about') }">About</a></li>
+            </ul>
+        </div>
+        <h2 class="pull-right sub-title">{{ pageSubTitle }}</h2>
+    </div>
+</nav>
