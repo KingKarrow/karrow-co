@@ -43,16 +43,21 @@ body {
     margin: 0 auto;
     padding: 60px 10px 10px;
     text-align: center;
-    > * { height: 100%; }
-    a {
+    display: flex;
+    .center-image,
+    .side-image {
+        height: 100%;
         img {
             box-shadow: 1px 1px 8px -1px @brand-black;
             max-height: 100%;
         }
     }
     .center-image {
-        display: inline-block;
-        height: 100%;
+        flex: 1 0 0px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         img {
             max-width: 100%;
@@ -77,22 +82,22 @@ body {
         }
     }
     .side-image {
-        position: absolute;
-        top: 25%;
-        height: 50%;
+        flex: 0 0 10%;
+        max-width: 10%;
         opacity: .5;
+        display: flex;
+        align-items: center;
         .transition(.2s opacity);
         &.right {
-            left: 0;
+            justify-content: flex-start;
             img {
-                left: 0;
+                height: 40%;
             }
         }
         &.left {
-            right: 0;
+            justify-content: flex-end;
             img {
-                right: 0;
-                //img { float: right; }
+                height: 40%;
             }
         }
         &.hover { opacity: 1; }
@@ -327,7 +332,9 @@ body {
         .present-img { 
             text-align: center;
             a {
-                display: inline-block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 height: 100%;
             }
         }

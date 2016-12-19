@@ -1,4 +1,3 @@
-/* CSS crunched with Crunch - http://crunchapp.net/ */
 .text-primary {
   color: #ffd701;
 }
@@ -65,17 +64,23 @@ body {
   margin: 0 auto;
   padding: 60px 10px 10px;
   text-align: center;
+  display: flex;
 }
-.image-large > * {
+.image-large .center-image,
+.image-large .side-image {
   height: 100%;
 }
-.image-large a img {
+.image-large .center-image img,
+.image-large .side-image img {
   box-shadow: 1px 1px 8px -1px #292a2c;
   max-height: 100%;
 }
 .image-large .center-image {
-  display: inline-block;
-  height: 100%;
+  flex: 1 0 0px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 .image-large .center-image img {
@@ -108,24 +113,25 @@ body {
   padding: 0 15px;
 }
 .image-large .side-image {
-  position: absolute;
-  top: 25%;
-  height: 50%;
+  flex: 0 0 10%;
+  max-width: 10%;
   opacity: .5;
+  display: flex;
+  align-items: center;
   -webkit-transition: 0.2s opacity;
   transition: 0.2s opacity;
 }
 .image-large .side-image.right {
-  left: 0;
+  justify-content: flex-start;
 }
 .image-large .side-image.right img {
-  left: 0;
+  height: 40%;
 }
 .image-large .side-image.left {
-  right: 0;
+  justify-content: flex-end;
 }
 .image-large .side-image.left img {
-  right: 0;
+  height: 40%;
 }
 .image-large .side-image.hover {
   opacity: 1;
@@ -394,7 +400,9 @@ body {
   text-align: center;
 }
 .presentation .full-view .present-img a {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 .image-loading::after {
@@ -688,7 +696,7 @@ body {
   font-size: 16px;
 }
 .about .about-content p > * {
-  color: #ffffff;
+  color: #fff;
 }
 .about .about-footer {
   margin-bottom: 25px;

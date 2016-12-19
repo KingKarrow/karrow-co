@@ -53,7 +53,7 @@ karrow_directives.directive('galleryBase', function ($timeout) {
                 //scope.loading[modeType] = true;
                 //cenImg.addClass('image-loading');
                 imgLoad();
-                setCenImgCss();
+                // setCenImgCss();
             });
         }
     };

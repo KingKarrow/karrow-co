@@ -123,12 +123,12 @@ karrow_controllers.controller('GalleryCTRL', function ($scope, $state, $log, $ht
         });
     };
     
-    $(window).resize(function () {
-        $scope.$broadcast('set-Cen', $scope.focusedImage, 'f');
-        if($scope.presenting) {
-            $scope.$broadcast('set-Cen', $scope.presentedImage, 'p');
-        }
-    });
+    // $(window).resize(function () {
+    //     $scope.$broadcast('set-Cen', $scope.focusedImage, 'f');
+    //     if($scope.presenting) {
+    //         $scope.$broadcast('set-Cen', $scope.presentedImage, 'p');
+    //     }
+    // });
     
     /***VIDEO***/
     

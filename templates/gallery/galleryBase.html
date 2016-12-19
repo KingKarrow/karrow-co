@@ -7,14 +7,14 @@
         </div>
     </div>
     <div ng-if="galleryType != 'animation'" class="image-large">
-        <div class="col-xs-1">
+        <!--<div class="col-xs-1">-->
             <a href hoverable class="side-image left"
                ng-if="!!imageList[focusedImage.index-1]"
                ng-click="imageFocus(focusedImage.index-1)">
                 <img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ imageList[focusedImage.index-1].file }}">
             </a>
-        </div>
-        <div class="col-xs-10">
+        <!--</div>-->
+        <!--<div class="col-xs-10">-->
             <a hoverable ng-click="present(1)" href class="center-image" ng-class="{ 'image-loading' : loading['f'] }">
                 <img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ focusedImage.file }}">
                 <div class="hover-info">
@@ -22,14 +22,14 @@
                     <i class="fa fa-expand"></i>
                 </div>
             </a>
-        </div>
-        <div class="col-xs-1">
+        <!--</div>-->
+        <!--<div class="col-xs-1">-->
             <a hoverable href class="side-image right"
                ng-if="!!imageList[focusedImage.index+1]"
                ng-click="imageFocus(focusedImage.index+1)">
                 <img ng-src="resources/img/gallery/{{ galleryType }}/JPEG/{{ imageList[focusedImage.index+1].file }}">
             </a>
-        </div>
+        <!--</div>-->
     </div>
     <div ng-if="galleryType == 'animation'" class="videos">
         <div class="col-md-4 col-xs-12 col-sm-6" ng-repeat="video in videoList">
