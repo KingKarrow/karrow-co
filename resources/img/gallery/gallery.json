@@ -1,0 +1,58 @@
+[
+    {
+        "name":"Reign Deer",
+        "file":"DeerStickerWeb.png",
+        "gallery":"illustration",
+        "description":"These are also stickers!",
+        "date_uploaded":"0000-00-00"
+    },
+    {
+        "name":"Adventurer at Rest",
+        "file":"IceCaveGraphite.jpg",
+        "gallery":"illustration",
+        "description":"Done in graphite",
+        "date_uploaded":"0000-00-00"
+    },
+    {
+        "name":"Ruff Character Model",
+        "file":"RuffFinals_web.jpg",
+        "gallery":"illustration",
+        "description":"Ruff the Hedgehog, a character from my upcoming short film Ruff and Tumble",
+        "date_uploaded":"0000-00-00"
+    },
+    {
+        "name":"Tumble Character Model",
+        "file":"TumbleFinals_web.jpg",
+        "gallery":"illustration",
+        "description":"Tumble the Dog, a character from my upcoming short film Ruff and Tumble",
+        "date_uploaded":"0000-00-00"
+    },
+    {
+        "name":"Dave and Jamie Character Reference",
+        "file":"characterRef_DaveJamie-r1.jpg",
+        "gallery":"illustration",
+        "description":"Dave and Jamie, two characters from a story I started to develop. This is a case file created by their classmate Marley, who aspires to be a journalist or detective.",
+        "date_uploaded":"0000-00-00"
+    },
+    {
+        "name":"Style Exercise",
+        "file":"AllStyles.jpeg",
+        "gallery":"illustration",
+        "description":"Old Spanish woman, in three styles: Nico Marlet, Creature Box, and a film called Ernest & Celestine",
+        "date_uploaded":"0000-00-00"
+    },
+    {
+        "name":"My Utopia",
+        "file":"mmckean_MyUtopia_r2.jpg",
+        "gallery":"illustration",
+        "description":"Alternatively titled: Underwear Party",
+        "date_uploaded":"0000-00-00"
+    },
+    {
+        "name":"Dawn of a New Warrior",
+        "file":"mmckean_Petrarch.jpg",
+        "gallery":"illustration",
+        "description":"Baby's first sword!",
+        "date_uploaded":"0000-00-00"
+    }
+]

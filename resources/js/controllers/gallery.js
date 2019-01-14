@@ -18,39 +18,39 @@ karrow_controllers.controller('GalleryCTRL', function ($scope, $state, $log, $ht
         var galleryUrl = 'resources/img/gallery/' + gallType + '/JPEG/';
         
         $scope.galleryType = gallType;
+        $scope.galleries = {};
         
         $rootScope.pageSubTitle = $rootScope.capitalizeFirstLetter(gallType);
     
         $http({
-            method: 'POST',
-            url: 'resources/img/gallery/galleryList.php',
-            data: { galleryType: $scope.galleryType, galleryPath: gallType + '/JPEG/' }
+            method: 'GET',
+            url: 'resources/img/gallery/gallery.json'
         })
         .success(function (result) {
             //result.splice(0, 2);
-            if(typeof(result) == 'object') {
-                var i = 0,
-                    cut = [];
-                for (i; i < result.length; i++) {
-                    if ( (result[i][0] === '.') || !(result[i].indexOf('.') > -1) ) {
-                        cut.unshift(i);
-                    }
-                }
-                for (i = 0; i < cut.length; i++) {
-                    result.splice(cut[i], 1);
-                }
-                if (result.length) {
-                    for (i = 0; i < result.length; i++) {
-                        var obj = {
-                            file: result[i]
-                        };
-                        $scope.imageList.push(obj);
-                    }
-                    $scope.getDB();
-                }
-            } else {
-                $log.error(result);
+
+            var imgElemTemps = [];
+            for(var g = 0; g < result.length; g++) {
+                var thisGallery = result[g].gallery;
+                if(!$scope.galleries[thisGallery]) $scope.galleries[thisGallery] = [];
+
+                $scope.galleries[thisGallery].push(result[g]);
+                $scope.galleries[thisGallery][$scope.galleries[thisGallery].length - 1].index = $scope.galleries[thisGallery].length - 1;
+                var imgElem = new Image();
+                imgElem.title = "imgElem" + g;
+                imgElem.onload = function(ev) {
+                    var imgInd = parseInt(ev.path[0].title.slice(7));
+                    $scope.galleries[thisGallery][imgInd].width = ev.path[0].width;
+                    $scope.galleries[thisGallery][imgInd].height = ev.path[0].height;
+                    // console.log(ev);
+                };
+                imgElem.src = 'resources/img/gallery/' + thisGallery + '/JPEG/' + $scope.galleries[thisGallery][$scope.galleries[thisGallery].length - 1].file;
             }
+            $scope.imageList = $scope.galleries[thisGallery];
+
+            $scope.imageFocus(0);
+            $scope.imageList[0].presented = true;
+            $scope.presentedImage = $scope.imageList[0];
         })
         .error(function (result) {
             $log.error(result.responseText);
